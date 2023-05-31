@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style"><slot></slot></button>
+  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }} </button>
 </template>
 
 <script lang="ts" setup>
@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<{
   /**
    * The label of the button
    */
-  text: string,
+  label: string,
   /**
    * primary or secondary button
    */
@@ -23,12 +23,6 @@ const props = withDefaults(defineProps<{
    * background color of the button
    */
   backgroundColor?: string,
-
-  icon?: string,
-
-  variant?: string,
-
-  modifiers?: string[]
 
 }>(), { primary: false });
 
